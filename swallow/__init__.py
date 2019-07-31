@@ -2,21 +2,19 @@ import os
 
 from flask import Flask
 
+from enviroment import SETTINGS_MODULE
 
-def create_app(test_config: str=None):
+
+def create_app(name=__name__):
     """
     创建应用
 
     :param test_config:
     :return:
     """
-    app = Flask(__name__)
-    app.config.from_mapping(
-        SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
-    )
+    app = Flask(name)
 
-    app.config.from_pyfile('config.product.py', silent=True)
+    app.config.from_object(SETTINGS_MODULE)
 
     # a simple page that says hello
     @app.route('/hello')

@@ -1,7 +1,7 @@
 from swallow import create_app
 
 
-app = create_app()
+App = create_app()
 
 if __name__ == '__main__':
-    app.run()
+    App.run()

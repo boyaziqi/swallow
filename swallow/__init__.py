@@ -22,3 +22,5 @@ def create_app(name=__name__):
         return 'Hello, World!'
 
     return app
+
+App = create_app()

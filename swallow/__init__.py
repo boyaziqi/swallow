@@ -4,7 +4,7 @@ from enviroment import SETTINGS_MODULE
 from flask_migrate import Migrate
 
 from swallow.db import db
-from swallow.models import uesrs
+from swallow.models import uesrs, articles, comments
 
 
 def create_app(name=__name__):

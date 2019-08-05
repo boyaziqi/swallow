@@ -11,9 +11,10 @@ class User(db.Model):
 
     id = Column(Integer, primary_key=True)
     name = Column(String(50), unique=True, nullable=False)
+    mobile = Column(String(20), unique=True, nullable=False)
     email = Column(String(50), unique=True, nullable=False)
     nickname = Column(String(50), unique=True, nullable=False, default='')
-    password = Column(String(50), unique=True, nullable=False, default='')
+    password = Column(String(50), nullable=False, default='')
 
     def __repr__(self):
         return f'<User {self.name}>'

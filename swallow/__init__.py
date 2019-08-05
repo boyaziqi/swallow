@@ -1,8 +1,10 @@
-import os
-
 from flask import Flask
 
 from enviroment import SETTINGS_MODULE
+from flask_migrate import Migrate
+
+from swallow.db import db
+from swallow.models import uesrs
 
 
 def create_app(name=__name__):
@@ -23,4 +25,5 @@ def create_app(name=__name__):
 
     return app
 
-App = create_app()
+app = create_app()
+migrate = Migrate(app, db)

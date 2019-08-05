@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String
 
-from swallow.models import db
+from swallow.db import db
 
 
 class User(db.Model):

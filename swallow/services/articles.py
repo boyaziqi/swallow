@@ -16,3 +16,27 @@ def update_article(article, info):
     article.content = info['content']
     db.session.add(article)
     db.session.commit()
+
+
+def add_category(info):
+    category = Category(**info)
+    db.session.add(category)
+    db.session.commit()
+
+
+def update_category(category, info):
+    category.name = info['name']
+    db.session.add(category)
+    db.session.commit()
+
+
+def add_tag(info):
+    tag = Tag(**info)
+    db.session.add(tag)
+    db.session.commit()
+
+
+def update_tag(tag, info):
+    tag.name = info['name']
+    db.session.add(tag)
+    db.session.commit()

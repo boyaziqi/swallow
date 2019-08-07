@@ -5,6 +5,7 @@ from flask_migrate import Migrate
 
 from swallow.db import db
 from swallow.models import uesrs, articles, comments
+from swallow.urls import article_bp
 
 
 def create_app(name=__name__):
@@ -27,3 +28,6 @@ def create_app(name=__name__):
 
 app = create_app()
 migrate = Migrate(app, db)
+
+app.register_blueprint(article_bp)
+# app.url_map.strict_slashes = False

@@ -18,6 +18,8 @@ def create_app(name=__name__):
     app = Flask(name)
 
     app.config.from_object(SETTINGS_MODULE)
+    # 绑定 SQLAlchemy 和当前 App
+    db.init_app(app)
 
     # a simple page that says hello
     @app.route('/hello')

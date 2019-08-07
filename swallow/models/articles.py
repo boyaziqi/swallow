@@ -33,7 +33,7 @@ class Article(db.Model):
         backref=db.backref('articles', lazy=True),
         lazy='subquery',
     )
-    comments = db.relationship('articles', backref='article', lazy=True)
+    comments = db.relationship('Comment', backref='article', lazy=True)
 
     def __repr__(self):
         return f'<Article {self.title}>'

@@ -12,4 +12,4 @@ ENV = 'development'
 #     'charset': 'utf8mb4',
 # }
 
-SQLALCHEMY_DATABASE_URI = f'mysql+mysqldb://root:docker_mysql@127.0.0.1/swallow?charset=utf8mb4'
+SQLALCHEMY_DATABASE_URI = f'mysql+mysqldb://root:yLKGHEZ+haja6Nnboa5KygoDeA=@127.0.0.1/swallow?charset=utf8mb4'

@@ -22,6 +22,7 @@ article_parse.add_argument('category_id', type=int, required=True, help='分类i
 
 
 article_fields = {
+    'id': fields.Integer,
     'title': fields.String,
     'content': fields.String,
     'created_at': fields.DateTime(dt_format='iso8601'),
@@ -32,8 +33,8 @@ article_fields = {
 class ArticleListView(Resource):
     @marshal_with(article_fields, envelope='result')
     def get(self):
-        article = Article.query.all()
-        return article
+        articles = Article.query.all()
+        return articles, 200, {'Access-Control-Allow-Origin': '*'}
 
     def post(self):
         args = article_parse.parse_args()
@@ -45,7 +46,7 @@ class ArticleView(Resource):
     @marshal_with(article_fields, envelope='result')
     def get(self, article_id):
         article = Article.query.filter_by(id=article_id).first_or_404()
-        return article
+        return article, 200, {'Access-Control-Allow-Origin': '*'}
 
     def put(self, article_id):
         article = Article.query.filter_by(id=article_id).first_or_404()
@@ -64,6 +65,7 @@ category_parse = reqparse.RequestParser()
 category_parse.add_argument('name', type=str, required=True, help='名称')
 
 category_fields = {
+    'id': fields.Integer,
     'name': fields.String,
 }
 

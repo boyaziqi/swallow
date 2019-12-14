@@ -33,3 +33,6 @@ migrate = Migrate(app, db)
 
 app.register_blueprint(article_bp)
 # app.url_map.strict_slashes = False
+
+def init_db():
+    db.create_all()

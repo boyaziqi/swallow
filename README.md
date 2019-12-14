@@ -1,6 +1,6 @@
 Swallow
 ----------
-个人网站管理后台后端，基于`Flask`。 前端部分代码查看[swallow-front](https://github.com/boyaziqi/swallow-front)
+个人网站管理后台后端，基于[Flask](https://www.palletsprojects.com/p/flask/)。 前端部分代码查看[swallow-front](https://github.com/boyaziqi/swallow-front)
 
 #### 功能
 - 富文本管理

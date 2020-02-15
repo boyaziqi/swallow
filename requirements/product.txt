@@ -3,3 +3,4 @@ Flask-SQLAlchemy==2.4.0
 mysqlclient==1.4.2.post1
 Flask-Migrate==2.5.2
 Flask-RESTful==0.3.7
+pytest

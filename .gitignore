@@ -75,3 +75,4 @@ commands/**
 scripts/**
 docker_mysql_data
 .vscode/
+.tox/
